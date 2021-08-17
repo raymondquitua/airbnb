@@ -1,9 +1,22 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 function Banner() {
+    const [offsetY, setOffsetY] = useState(0);
+    const handleScroll = () => setOffsetY(window.pageYOffset);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+
     return (
-        <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px]">
-            <Image 
+        <div className="relative h-[300px] sm:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[600px]"
+            style={{ transform: `translateY(${offsetY * 0.5}px)` }}
+        >
+            <Image
                 src="https://links.papareact.com/0fm"
                 layout="fill"
                 objectFit="cover"
