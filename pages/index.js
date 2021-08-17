@@ -16,52 +16,54 @@ export default function Home( { exploreData, cardsData }) {
 
         <Header />
         <Banner />
-      
-      <main className="max-w-7xl mx-auto px-8 sm:px-16">
-      {/* SMALL CARD SECTION */}
-        <section className="pt-6">
-          <h2 className="text-4xl font-semibold pb-5">Explore Nearby</h2>
 
-          {/* Pull some data from a server - API endpoints */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 "> 
-            {exploreData?.map(({ img, distance, location })  => (
-                <SmallCard 
-                  key={img}
-                  img={img}
-                  distance={distance}
-                  location={location}
-                />
-            ))}
-          </div>
-        </section>
+          <main className="max-w-7xl mx-auto my-5 px-8 sm:px-16 md:shadow-sm 
+                           md:border-gray-100 rounded-xl">
+          {/* SMALL CARD SECTION */}
+            <section className="pt-6">
+              <h2 className="text-4xl font-semibold pb-5">Explore Nearby</h2>
 
-      {/* MEDIUM CARD SECTION */}
-        <section>
-            <h2 className="text-4xl font-semibold py-8">Live Anywhere</h2>
-
-            <div className="flex space-x-3 overflow-x-scroll p-3 -ml-3">
-                {cardsData?.map(({ img, title })  => (
-                  <MediumCard 
-                    key={img}
-                    img={img}
-                    title={title}
-                  />
+              {/* Pull some data from a server - API endpoints */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 "> 
+                {exploreData?.map(({ img, distance, location })  => (
+                    <SmallCard 
+                      key={img}
+                      img={img}
+                      distance={distance}
+                      location={location}
+                    />
                 ))}
-            </div>
+              </div>
+            </section>
 
-        </section>
+          {/* MEDIUM CARD SECTION */}
+            <section>
+                <h2 className="text-4xl font-semibold py-8">Live Anywhere</h2>
 
-      {/* LARGE CARD SECTION */}
-        <section>
-          <LargeCard 
-            img="https://links.papareact.com/4cj"
-            title="The Greatest Outdoors"
-            description="Wishlists curated by Airbnb"
-            buttonText="Get Inspired"
-          />
-        </section>
+                <div className="flex space-x-3 overflow-x-scroll p-3 -ml-3">
+                    {cardsData?.map(({ img, title })  => (
+                      <MediumCard 
+                        key={img}
+                        img={img}
+                        title={title}
+                      />
+                    ))}
+                </div>
 
-      </main> 
+            </section>
+
+          {/* LARGE CARD SECTION */}
+            <section>
+              <LargeCard 
+                img="https://links.papareact.com/4cj"
+                title="The Greatest Outdoors"
+                description="Wishlists curated by Airbnb"
+                buttonText="Get Inspired"
+              />
+            </section>
+
+          </main> 
+   
       {/* FOOTER */}
       <Footer />
 
