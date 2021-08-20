@@ -99,7 +99,7 @@ function Header({ placeholder }) {
                 </div>
             
         {searchInput && (
-            <div className="relative flex flex-col col-span-3 mx-auto justify-center max-w-sm">
+            <div className="flex flex-col col-span-3 mx-auto justify-center w-[450px] sm:w-auto">
 
                     {/* // p-2 mt-2 bg-gray-500
                     // rounded-b-lg rounded-t-sm shadow-xl lg:w-auto " */}
