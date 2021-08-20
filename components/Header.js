@@ -105,7 +105,7 @@ function Header({ placeholder }) {
                     // rounded-b-lg rounded-t-sm shadow-xl lg:w-auto " */}
 {/* DATE_RANGE_PICKER */}
                     
-                    <DateRangePicker className="border-b mt-2"
+                    <DateRangePicker className="border-b mt-2 max-w-min"
                         color={"#3d91ff"}
                         ranges={[selectionRange]}
                         minDate={new Date()}
