@@ -99,13 +99,13 @@ function Header({ placeholder }) {
                 </div>
             
         {searchInput && (
-            <div className="flex flex-col col-span-3 mx-auto justify-center w-[450px] sm:w-auto">
+            <div className="flex flex-col col-span-3 mx-auto justify-center bg-red-500 sm:w-auto">
 
                     {/* // p-2 mt-2 bg-gray-500
                     // rounded-b-lg rounded-t-sm shadow-xl lg:w-auto " */}
 {/* DATE_RANGE_PICKER */}
                     
-                    <DateRangePicker className="border-b mt-2 justify-center"
+                    <DateRangePicker className="border-b mt-2 sm:justify-center"
                         color={"#3d91ff"}
                         ranges={[selectionRange]}
                         minDate={new Date()}
