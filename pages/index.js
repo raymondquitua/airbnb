@@ -1,11 +1,12 @@
 import Head from 'next/head'
+import { Fade } from 'react-awesome-reveal';
 import Banner from '../components/Banner'
 import Footer from '../components/Footer';
 import Header from '../components/Header'
 import LargeCard from '../components/LargeCard';
 import MediumCard from '../components/MediumCard';
 import SmallCard from '../components/SmallCard';
-import Fade from 'react-reveal/Fade';
+
 
 export default function Home( { exploreData, cardsData }) {
   return (
