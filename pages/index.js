@@ -1,11 +1,14 @@
 import Head from 'next/head'
 import { Fade } from 'react-awesome-reveal';
 import Banner from '../components/Banner'
+import BannerBottom from '../components/BannerBottom';
 import Footer from '../components/Footer';
 import Header from '../components/Header'
 import LargeCard from '../components/LargeCard';
 import MediumCard from '../components/MediumCard';
 import SmallCard from '../components/SmallCard';
+
+
 
 
 export default function Home( { exploreData, cardsData }) {
@@ -43,7 +46,7 @@ export default function Home( { exploreData, cardsData }) {
           {/* MEDIUM CARD SECTION */}
             <section>
                 <h2 className="text-4xl font-semibold py-8">Live Anywhere</h2>
-
+                  
                 <div className="flex space-x-3 overflow-x-scroll scrollbar-hide p-3 -ml-3">
                     {cardsData?.map(({ img, title })  => (
                       <MediumCard 
@@ -52,18 +55,27 @@ export default function Home( { exploreData, cardsData }) {
                         title={title}
                       />
                     ))}
-                </div>
-
+                </div>       
             </section>
 
           {/* LARGE CARD SECTION */}
             <section>
-              <LargeCard 
-                img="https://links.papareact.com/4cj"
-                title="The Greatest Outdoors"
-                description="Wishlists curated by Airbnb"
-                buttonText="Get Inspired"
-              />
+                <LargeCard 
+                  img="https://links.papareact.com/4cj"
+                  title="The Greatest Outdoors"
+                  description="Wishlists curated by Airbnb"
+                  buttonText="Get Inspired"
+                />
+            </section>
+         
+
+{/* BANNER BOTTOM SLIDING IMAGES */}
+            <section>
+              <h2 className="text-4xl font-semibold py-5">Carousel</h2>
+
+              <div className="mb-10 lg:p-2 lg:rounded-sm bg-white shadow-sm lg:shadow-lg md:border-0">
+                <BannerBottom />
+              </div>
             </section>
 
           </main> 

@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+
 function MediumCard({ img, title }) {
     return (
         <div className="cursor-pointer hover:scale-105 transform transition duration-300 ease-out">
@@ -12,8 +13,6 @@ function MediumCard({ img, title }) {
                 />
             </div>
             <h3 className="2xl mt-3">{title}</h3>
-        
-        
         </div>
     )
 }
