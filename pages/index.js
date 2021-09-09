@@ -19,14 +19,15 @@ export default function Home( { exploreData, cardsData }) {
         <Header />
         <Banner />
 
-          <main className="relative max-w-7xl md:mx-auto px-8 md:m-5 sm:px-16 bg-white md:shadow-sm 
-                           md:border-gray-100 md:rounded-xl">
+          <main className="relative max-w-7xl md:mx-auto px-8 md:m-5 sm:px-16 bg-white md:shadow-md 
+                           border border-gray-100  md:rounded-lg">
+          
           {/* SMALL CARD SECTION */}
             <section className="pt-6">
               <h2 className="text-4xl font-semibold pb-5">Explore Nearby</h2>
               <Fade>
                 {/* Pull some data from a server - API endpoints */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 "> 
+                <div className="bg-gray-100 rounded-md grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 overflow-y-auto scrollbar-hide h-64"> 
                   {exploreData?.map(({ img, distance, location })  => (
                       <SmallCard 
                         key={img}
@@ -43,7 +44,7 @@ export default function Home( { exploreData, cardsData }) {
             <section>
                 <h2 className="text-4xl font-semibold py-8">Live Anywhere</h2>
 
-                <div className="flex space-x-3 overflow-x-scroll p-3 -ml-3">
+                <div className="flex space-x-3 overflow-x-scroll scrollbar-hide p-3 -ml-3">
                     {cardsData?.map(({ img, title })  => (
                       <MediumCard 
                         key={img}
@@ -73,6 +74,7 @@ export default function Home( { exploreData, cardsData }) {
     </div>
   );
 }
+
 export async function getStaticProps() {
   const exploreData = await fetch("https://links.papareact.com/pyp")
   .then(
@@ -83,7 +85,7 @@ export async function getStaticProps() {
   .then(
     (res) => res.json()
   );
-  
+   
   return {
     props: {
       exploreData,
